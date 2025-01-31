@@ -1,22 +1,22 @@
-console.log("Soal 7 - Pattern");
-console.log("");
-
-const n: number = 5;
-
-// Pattern segitiga
-for (let i = 1; i <= n; i++) {
-  let baris: string = "";
-
-  // Spasi
-  for (let j = 1; j <= n - i; j++) {
-    baris += " ";
+function plusMinus(arr: number[]): void {
+    let positives: number = 0;
+    let negatives: number = 0;
+    let zeros: number = 0;
+    const n: number = arr.length;
+  
+    // Count positives, negatives, and zeros
+    for (let num of arr) {
+      if (num > 0) positives++;
+      else if (num < 0) negatives++;
+      else zeros++;
+    }
+  
+    // Calculate ratios and print with 6 decimal places
+    console.log((positives / n).toFixed(6));
+    console.log((negatives / n).toFixed(6));
+    console.log((zeros / n).toFixed(6));
   }
-
-  // Bintang
-  for (let k = 1; k <= i; k++) {
-    baris += "* ";
-  }
-
-  console.log(baris);
-}
-
+  
+  // Test the function with sample input
+  const arr = [-4, 3, -9, 0, 4, 1];
+  plusMinus(arr);
